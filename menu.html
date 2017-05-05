@@ -1,0 +1,136 @@
+<html>
+
+<head>
+<style>
+.button {
+    background-color: #DC143C;
+    border: 2px solid #E9967A;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 8px;
+     -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+}
+</style>
+
+</head>
+
+<body bgcolor="cyan">
+<center><h1><b><i><u>RESTUARANT MENU</u></i></b></h1>
+<br><br><br>
+	<table>
+	<tr>
+	<th></th>
+	<th></th>
+	<th>Item Name</th>
+	<th>Rate</th>
+	<th>Quantity</th>
+	</tr>
+	<tr>
+    
+	<td><input type="checkbox" id="opp" onclick='handleChange(this);'></td>
+    <td><img src="vegbiryani.jpg" height="150" width="200"></img></td>
+	<td><b><center>Biryani</center></b></td>
+	<td>Rs.120</td>
+	<td><center><select id="op1" disabled>	
+				<option value="0" selected>0</option>
+
+		<option value="1">1</option>
+		<option value="2">2</option>
+		<option value="3">3</option>
+     </center>
+	</select></td>
+	</input>
+     </tr>
+	 <tr>
+		<td><input type="checkbox" id="opp" onclick='handleChange1(this);'></td>
+		<td><img src="idly.jpg" height="150" width="200"></img></td>
+	<td><center><b>Idly</b></center></td>
+	<td><center>Rs.50</center></td>
+	<td><center><select id="op2" disabled>	
+				<option value="0" selected>0</option>
+
+		<option value="1">1</option>
+		<option value="2">2</option>
+		<option value="3">3</option>
+	</select>
+    </center>
+	</input>
+	</tr>
+	<tr>
+	<td><input type="checkbox" id="opp" onclick='handleChange2(this);'></td>
+   	<td><img src="dosa.jpg" height="150" width="200"></img></td>
+	<td><center><b>Dosa</b></center></td>
+	<td>Rs.65</td>
+	<td><center><select id="op3" disabled>	
+			<option value="0" selected>0</option>
+		<option value="1">1</option>
+		<option value="2">2</option>
+		<option value="3">3</option>
+
+	</select>
+	</center>
+    </input>
+	</tr>
+	</table>
+<input type="submit" class="button" onclick="func()" value="GET BILL">
+</center>
+
+
+	<script>
+		
+          function func(){
+		
+			var op1= document.getElementById("op1").value;
+			var op2= document.getElementById("op2").value;
+			var op3= document.getElementById("op3").value;
+			var total=op1*120 + op2*50 + op3*65;
+			window.alert("ORDER SUMMARY\n"+"Item   Quantity  Cost(in Rs.)\n"+"Biryani    "+op1+"         "+op1*120+"\n"+"Idly         " +op2+"         "+op2*50+"\n"+"Dosa       "+op3+"         "+op3*65+"\n"+"Total                 "+total);
+		
+		}
+        
+		function handleChange(checkbox){
+
+			if(checkbox.checked == true){
+				
+				document.getElementById("op1").disabled = false;
+
+			}
+
+			if(checkbox.checked == false){
+
+
+				document.getElementById("op1").disabled = true;
+
+
+			}
+		}
+		function handleChange1(checkbox){
+			if(checkbox.checked == true){
+				document.getElementById("op2").disabled = false;
+            }
+             if(checkbox.checked == false){
+                document.getElementById("op2").disabled = true;
+             }
+		}
+        function handleChange2(checkbox){
+			if(checkbox.checked == true){
+				document.getElementById("op3").disabled = false;
+            }
+             if(checkbox.checked == false){
+                document.getElementById("op3").disabled = true;
+             }
+
+		}
+	</script>
+
+</body>
+
+
+</html>
